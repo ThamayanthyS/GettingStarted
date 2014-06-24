@@ -11,12 +11,13 @@ import com.hazelcast.core.MembershipListener;
 
 public class LeaderTest {
     static int x;
-
+    public static int count=0;
     public static void main(String[] args) {
-
+        count++;
         Config cfg = new Config();
         Config config = new Config();
         NetworkConfig network = cfg.getNetworkConfig();
+        cfg.setInstanceName(""+count);
 
         JoinConfig join = network.getJoin();
         join.getTcpIpConfig().setEnabled(false);
@@ -25,16 +26,8 @@ public class LeaderTest {
         cfg.setProperty("hazelcast.initial.min.cluster.size","4");
 
         HazelcastInstance instance = Hazelcast.newHazelcastInstance(cfg);
-        //HazelcastInstance instance1=Hazelcast.newHazelcastInstance();
-
-//        Map<Integer, String> mapCustomers = instance.getMap("customers");
-//        mapCustomers.put(1, "Joe");
-//        mapCustomers.put(2, "Ali");
-//        mapCustomers.put(3, "Avi");
-//
-//        System.out.println("count" + x++);
-//        System.out.println("Customer with key 1: " + mapCustomers.get(1));
-//        System.out.println("Map Size:" + mapCustomers.size());
+//        if(count>3)
+//            Hazelcast.getHazelcastInstanceByName("3").shutdown();
 
         System.out.println("is leader :"+isLeader(instance));
         System.out.println("leader  " + instance.getCluster()
@@ -42,8 +35,6 @@ public class LeaderTest {
         MembershipListener listener = new MyMembershipListener();
         instance.getCluster().addMembershipListener(listener);
         System.out.println("IsActive     " + isActive(instance));
-       // instance.getCluster().getMembers().iterator().remove();//instance.getCluster().getMembers().iterator().next();
-
     }
 
     public static boolean isLeader(HazelcastInstance instance) {
@@ -64,7 +55,4 @@ public class LeaderTest {
         }
         return isActive;
     }
-
-
-
 }
