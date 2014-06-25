@@ -27,6 +27,7 @@
     <file path="$PROJECT_DIR$/../ClusteringTest1/src/main/java/com/thamaya/cluster/MainClass.java" changelist="fbedca1d-1d23-4954-bacc-9cf9bb572495" time="1403549650743" ignored="false" />
     <file path="/MainClass.java" changelist="fbedca1d-1d23-4954-bacc-9cf9bb572495" time="1403549650219" ignored="false" />
     <file path="/DummyFile.xpath" changelist="fbedca1d-1d23-4954-bacc-9cf9bb572495" time="1403559333889" ignored="false" />
+    <file path="/SplitBrainTest.java" changelist="fbedca1d-1d23-4954-bacc-9cf9bb572495" time="1403731013969" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,10 +86,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LeaderTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LeaderTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hazelcast/test/LeaderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="66" selection-start="1412" selection-end="1412" vertical-scroll-proportion="1.01983">
+            <state line="32" column="8" selection-start="1114" selection-end="1217" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,11 +97,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../hazelcast-3.2.1/lib/hazelcast-3.2.1.jar!/com/hazelcast/config/Config.class">
+      <file leaf-file-name="SplitBrainTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hazelcast/test/SplitBrainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="64" selection-start="2704" selection-end="2704" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="26" column="89" selection-start="751" selection-end="751" vertical-scroll-proportion="0.7753479">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1562#1809#0" expanded="true" />
+                <element signature="e#1798#1799#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestUtil.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hazelcast/instance/TestUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="53" selection-start="1816" selection-end="1816" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,7 +124,7 @@
       <file leaf-file-name="hazelcast.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hazelcast.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="155" column="34" selection-start="6542" selection-end="6546" vertical-scroll-proportion="-38.44">
+            <state line="155" column="34" selection-start="6542" selection-end="6546" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -160,6 +176,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/hazelcast.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/hazelcast/test/LeaderTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hazelcast/instance/TestUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hazelcast/test/SplitBrainTest.java" />
       </list>
     </option>
   </component>
@@ -195,6 +213,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -230,22 +250,12 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GettingStarted" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GettingStarted" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -270,32 +280,68 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hazelcast" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GettingStarted" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GettingStarted" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hazelcast" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.general" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../hazelcast-3.2.1/lib/hazelcast-wm-3.2.1.jar!/" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -308,7 +354,7 @@
       <recent name="com.hazelcast.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LeaderTest">
+  <component name="RunManager" selected="Application.SplitBrainTest">
     <configuration default="false" name="GettingStarted" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="GettingStarted" />
       <option name="VM_PARAMETERS" />
@@ -357,6 +403,22 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="SplitBrainTest" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.hazelcast.test.SplitBrainTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="GettingStarted" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -369,19 +431,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -409,6 +458,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -445,16 +507,18 @@
       <patterns />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.GettingStarted" />
       <item index="1" class="java.lang.String" itemvalue="Application.GettingStartedClient" />
       <item index="2" class="java.lang.String" itemvalue="Application.LeaderTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.SplitBrainTest" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.LeaderTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.GettingStarted" />
-        <item index="2" class="java.lang.String" itemvalue="Application.GettingStartedClient" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.SplitBrainTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.LeaderTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.GettingStarted" />
+        <item index="3" class="java.lang.String" itemvalue="Application.GettingStartedClient" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -508,8 +572,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12116444" sideWeight="0.6064" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3936" sideWeight="0.99842644" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27380016" sideWeight="0.88" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12" sideWeight="0.99842644" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -626,11 +690,6 @@
         <state line="14" column="0" selection-start="663" selection-end="663" vertical-scroll-proportion="0.6498054" />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../hazelcast-3.2.1/lib/hazelcast-3.2.1.jar!/com/hazelcast/core/MembershipListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="165" selection-end="165" vertical-scroll-proportion="0.21551724" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GettingStarted.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="5" selection-start="1379" selection-end="1379" vertical-scroll-proportion="0.0">
@@ -645,6 +704,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hazelcast.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="155" column="34" selection-start="6542" selection-end="6546" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hazelcast/instance/TestUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="53" selection-start="1816" selection-end="1816" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hazelcast/test/MyMembershipListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="45" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0">
@@ -652,25 +727,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../hazelcast-3.2.1/lib/hazelcast-3.2.1.jar!/com/hazelcast/config/Config.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="64" selection-start="2704" selection-end="2704" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hazelcast.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="34" selection-start="6542" selection-end="6546" vertical-scroll-proportion="-38.44">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hazelcast/test/LeaderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="66" selection-start="1412" selection-end="1412" vertical-scroll-proportion="1.01983">
+        <state line="32" column="8" selection-start="1114" selection-end="1217" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hazelcast/test/SplitBrainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="89" selection-start="751" selection-end="751" vertical-scroll-proportion="0.7753479">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1562#1809#0" expanded="true" />
+            <element signature="e#1798#1799#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -732,6 +804,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -739,7 +812,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>hazelcast-client-3.2.1</last-edited>
+          <last-edited>hazelcast-3.2.11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
