@@ -1,13 +1,14 @@
 package com.hazelcast.test;
 
 import com.hazelcast.config.Config;
-import com.hazelcast.core.*;
-import com.hazelcast.instance.GroupProperties;
+import com.hazelcast.core.Hazelcast;
+import com.hazelcast.core.HazelcastInstance;
+import com.hazelcast.core.Member;
+import com.hazelcast.core.MembershipListener;
 import com.hazelcast.instance.Node;
 import com.hazelcast.instance.TestUtil;
 
 import java.util.Iterator;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,23 +32,20 @@ public class SplitBrainTest {
     }
 
     public static void testSplitBrain() throws InterruptedException {
-        System.out.println("STARTED%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("STARTED%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         Config config = new Config();
         config.getGroupConfig().setName("split");
-        config.setProperty("hazelcast.initial.min.cluster.size", "1");
-        config.setProperty(GroupProperties.PROP_MERGE_FIRST_RUN_DELAY_SECONDS, "5");
-        config.setProperty(GroupProperties.PROP_MERGE_NEXT_RUN_DELAY_SECONDS, "5");
+     //   config.setProperty("hazelcast.initial.min.cluster.size", "1");
+
         HazelcastInstance h1 = Hazelcast.newHazelcastInstance(config);
         HazelcastInstance h2 = Hazelcast.newHazelcastInstance(config);
         HazelcastInstance h3 = Hazelcast.newHazelcastInstance(config);
-        final CountDownLatch latch = new CountDownLatch(1);
-        h3.getLifecycleService().addLifecycleListener(new LifecycleListener() {
-            public void stateChanged(LifecycleEvent event) {
-                if (event.getState() == LifecycleEvent.LifecycleState.MERGED) {
-                    latch.countDown();
-                }
-            }
-        });
+
+        MembershipListener listener = new MyMembershipListener();
+        h1.getCluster().addMembershipListener(listener);
+        h2.getCluster().addMembershipListener(listener);
+        h3.getCluster().addMembershipListener(listener);
+
 
         System.out.println("h1   "+h1.getCluster().getMembers().size());
         Iterator iterator=h1.getCluster().getMembers().iterator();
@@ -93,7 +91,7 @@ public class SplitBrainTest {
 //        System.out.println(h2.getCluster().getMembers().size());
 //        System.out.println(h3.getCluster().getMembers().size());
 
-        System.out.println("ENDED%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("ENDED%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
     }
 
     private static void closeConnectionBetween(HazelcastInstance h1, HazelcastInstance h2) {
