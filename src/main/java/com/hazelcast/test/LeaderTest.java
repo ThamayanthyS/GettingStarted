@@ -12,6 +12,7 @@ import java.util.Iterator;
 
 
 public class LeaderTest {
+    public static HazelcastInstance instance;
 
     public static void main(String[] args) {
 
@@ -27,7 +28,7 @@ public class LeaderTest {
         join.getMulticastConfig().setEnabled(true);
         cfg.setProperty("hazelcast.initial.min.cluster.size","4");
 
-        HazelcastInstance instance = Hazelcast.newHazelcastInstance(cfg);
+        instance = Hazelcast.newHazelcastInstance(cfg);
 
         MembershipListener listener = new MyMembershipListener();
         instance.getCluster().addMembershipListener(listener);
@@ -73,6 +74,9 @@ public class LeaderTest {
 //            isActive=false;
 //        }
         return isActive;
+    }
+    public static HazelcastInstance getHazelcastInstance(){
+        return   instance;
     }
     public static Member getLeader(HazelcastInstance instance){
         return instance.getCluster()
