@@ -15,6 +15,7 @@ public class MyMembershipListener implements MembershipListener {
     @Override
     public void memberAdded(MembershipEvent membershipEvent) {
         System.out.println("MemberAdded");
+
     }
 
     @Override

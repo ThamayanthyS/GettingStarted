@@ -35,6 +35,7 @@ public class LeaderTest {
         System.out.println("instance   " + instance.getCluster().getMembers().size());
         Iterator  iterator=instance.getCluster().getMembers().iterator();
         System.out.println("getLeader(instance) "+getLeader(instance));
+        System.out.println("Is active  "+isActive(instance));
         while (iterator.hasNext())
             System.out.println(iterator.next().toString());
 
@@ -52,11 +53,12 @@ public class LeaderTest {
     public static boolean isActive(HazelcastInstance instance) {
         boolean isActive = false;
         int clusterSize = instance.getCluster().getMembers().size();
-        if (clusterSize > 3) {
-            isActive = true;
-        } else if(clusterSize>10){
-            isActive=false;
-        }
+        isActive=instance.getLifecycleService().isRunning();
+//        if (clusterSize > 3) {
+//            isActive = true;
+//        } else if(clusterSize>10){
+//            isActive=false;
+//        }
         return isActive;
     }
     public static Member getLeader(HazelcastInstance instance){

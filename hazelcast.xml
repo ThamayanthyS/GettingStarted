@@ -78,7 +78,7 @@
     </network>
     <partition-group enabled="false"/>
     <executor-service name="default">
-        <pool-size>16</pool-size>
+        <pool-size>5</pool-size>
         <!--Queue capacity. 0 means Integer.MAX_VALUE.-->
         <queue-capacity>0</queue-capacity>
     </executor-service>
