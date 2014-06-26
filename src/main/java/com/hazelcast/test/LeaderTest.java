@@ -36,9 +36,22 @@ public class LeaderTest {
         Iterator  iterator=instance.getCluster().getMembers().iterator();
         System.out.println("getLeader(instance) "+getLeader(instance));
         System.out.println("Is active  "+isActive(instance));
+
+        iterator=getMembers();
         while (iterator.hasNext())
             System.out.println(iterator.next().toString());
 
+
+
+
+    }
+
+    public static Iterator getMembers(){
+
+        Iterator iterator_local=Hazelcast.getAllHazelcastInstances().iterator();
+        HazelcastInstance ins=(HazelcastInstance)iterator_local.next();
+        Iterator iterator_cluster=ins.getCluster().getMembers().iterator();
+        return iterator_cluster;
 
     }
 
